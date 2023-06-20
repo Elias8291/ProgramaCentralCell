@@ -264,7 +264,8 @@ public class UI_Login extends javax.swing.JFrame {
 
         if (usuario != null) {
             System.out.println("Inicio de sesión exitoso para el usuario: " + usuario.getNombre());
-
+                Main a=new Main();
+                a.setVisible(true);
        
                     
 

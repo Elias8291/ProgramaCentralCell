@@ -1,5 +1,6 @@
 package com.raven.component;
 
+import interfaz.Main;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -10,7 +11,10 @@ import java.awt.geom.RoundRectangle2D;
 
 public class Header extends javax.swing.JPanel {
 
-    public Header() {
+    private Main mainFrame;
+
+    public Header(Main mainFrame) {
+        this.mainFrame = mainFrame;
         initComponents();
         setOpaque(false);
         setBackground(new Color(51, 51, 51));
@@ -35,6 +39,11 @@ public class Header extends javax.swing.JPanel {
         buttonBadges2.setBadges(15);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/x (3).png"))); // NOI18N
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -61,6 +70,10 @@ public class Header extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+           mainFrame.dispose();
+    }//GEN-LAST:event_jLabel1MouseClicked
+
     @Override
     public void paint(Graphics grphcs) {
         Graphics2D g2 = (Graphics2D) grphcs.create();
@@ -72,8 +85,6 @@ public class Header extends javax.swing.JPanel {
         g2.dispose();
         super.paint(grphcs);
     }
-    
-    
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

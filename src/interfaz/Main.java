@@ -1,4 +1,4 @@
-package com.raven.main;
+package interfaz;
 
 import com.raven.event.EventMenu;
 import com.raven.form.Form;
@@ -39,7 +39,7 @@ public class Main extends javax.swing.JFrame {
     private void initComponents() {
 
         roundPanel1 = new com.raven.swing.RoundPanel();
-        header2 = new com.raven.component.Header();
+        header2 = new com.raven.component.Header(this);
         menu1 = new com.raven.component.Menu();
         body = new javax.swing.JPanel();
 
